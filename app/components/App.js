@@ -1,10 +1,10 @@
-import Marionette from 'backbone.marionette';
-import ItemView from './ItemView';
+import Mn from 'backbone.marionette'
+import LayoutView from './LayoutView'
 
-export default Marionette.Application.extend({
+export default Mn.Application.extend({
   region: '#app',
 
   onStart() {
-    this.showView(new ItemView());
+    this.showView(new LayoutView())
   }
-});
+})
