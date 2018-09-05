@@ -1,5 +1,6 @@
 import Marionette from 'backbone.marionette';
 import template from '../templates/search.jst';
+import Albums from '../collections/Albums'
 
 export default Marionette.View.extend({
   template,
@@ -16,6 +17,6 @@ export default Marionette.View.extend({
   },
 
   onSave() {
-    console.log('ALGO')
+    console.log(a) 
   }
 });

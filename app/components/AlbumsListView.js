@@ -1,8 +1,19 @@
 import Marionette from 'backbone.marionette';
-import template from '../templates/albums.jst';
+import template from '../templates/album.jst';
+import Albums from '../collections/Albums';
+import MyChildView from '../components/AlbumView'
 
-export default Marionette.View.extend({
-  template,
-  tagName: 'div',
-  className: 'albums-list'
+const collection = new Albums();
+
+export default Marionette.CollectionView.extend({
+  childView: MyChildView,
+  collection: collection,
+  tagName: 'ul',
+
+  initialize: () => {
+    console.log('COLLECTION VIEW INIT');
+    collection.fetch();
+  },
+
+  
 })
